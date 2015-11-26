@@ -50,3 +50,21 @@ unaliased (so we can call the real alias to add or view existing aliases). We
 can disable/enable our unalias alias by running shopt -u/-s expand_aliases, but
 so can the user. We could alias shopt, but then we also need some way to disable
 THAT when we actually want to remove our P
+
+The following need to be aliased or functioned somehow:
+alias - would show our sudo alias
+builtin - overrides our alias/function
+unset - undefines our functions
+unalias - undefines our aliases
+shopt - (`shopt -u expand_aliases` disables aliases)
+type - shows what type a command is (builtin, alias, function, command, etc)
+
+
+
+alias: aliased to call unalias alias and strip out mention of sudo alias
+unalias: aliased to call shopt -u expand_aliases
+shopt: alised to call builtin shopt
+builtin: functioned to call unset builtin (and redefine it)
+
+
+
